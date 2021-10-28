@@ -1,19 +1,20 @@
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
-    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
+    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
 <div class="coluna-esquerda largura-1_3">
-    <img style="height: 390px; width: 287px; margin-top: 5px;" src="recursos/imgs/SI_23.png">
+    <img style="height: 390px;width: 304px;margin-top: 6px;" src="recursos/imgs/SI_23.png">
 </div>
 <div class="coluna-direita largura-2_1 ">
-    <div style="width: 544.55px; margin-top: 110px; margin-right: 30px;">
+    <div style="width: 508px;margin-top: 150px;margin-right: 31px;">
         <h1>Lei de Execução Penal e sua correlação com a saúde</h1>
         <p>Instituída em 1984, a Lei nº 7.210 prevê o atendimento em saúde para as pessoas reclusas
-        em estabelecimentos prisionais. No momento de sua edição, sequer existiam as garantias
-        constitucionais de acesso universal, integral e gratuito ao sistema de saúde no país, o que
-        a deixa ser uma legislação considerada de vanguarda.</p>
+            em estabelecimentos prisionais. No momento de sua edição, sequer existiam as garantias
+            constitucionais de acesso universal, integral e gratuito ao sistema de saúde no país, o que
+            a deixa ser uma legislação considerada de 
+            <strong style="width: 40px; background-color: #FAC900; display: inline;"><a id="hotWord-bt">vanguarda</a></strong>.</p>
 
 
     </div>
@@ -25,3 +26,20 @@
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
         src="recursos/imgs/SI_F2.png">
 </footer>
+
+<div id="conteudo"
+    style="position: absolute; background-color: #fac901; top: 250px; right: 97px; width: 357px; border-radius: 10px;">
+    <p style="text-align: center;">Vanguarda; Aqui vai o significado de vanguarda.</p>
+</div>
+
+<script>
+    $(() => {
+        let conteudo = $('#conteudo').hide();
+        $('#hotWord-bt').hover(() => {
+            conteudo.fadeIn()
+        })
+        $('#hotWord-bt').mouseout(() => {
+            conteudo.fadeOut()
+        })
+    })
+</script>

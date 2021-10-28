@@ -1,19 +1,48 @@
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
-    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
+    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
 <div class="coluna-esquerda largura-1_3">
-    <img style="height: 321px; width: 382px; margin-top: 34px; margin-left: 35px;" src="recursos/imgs/SI_19.png">
+    <img style="height: 389px;width: 435px;" src="recursos/imgs/SI_19.png">
 </div>
 <div class="coluna-direita largura-2_1 ">
-    <div style="width: 394px; margin: 151px 35px;">
+    <div style="width: 394px; margin: 120px 35px;">
         <p>Na esteira dessas garantias à saúde, o Conselho Nacional de Saúde
-        editou a Carta de Direitos e Deveres da Pessoa Usuária da Saúde. Esse
-        documento foi atualizado pela Resolução nº 553/2017, pelo qual se
-        passou a prever, alguns direitos.</p>
+            editou a <strong>Carta de Direitos e Deveres da Pessoa Usuária da Saúde.</strong> Esse
+            documento foi atualizado pela Resolução nº 553/2017, pelo qual se
+            passou a prever, alguns direitos.</p>
         <p style="color: #004D73; font-size: 10px;"><strong>Clique nos números para conhecê-los.</p>
+        <div style="width: 430px;margin-top: 25px;margin-left: 90px;">
+            <img id="botao_1" style="height: 65px;" src="recursos/imgs/SI_19_01.png">
+            <img id="botao_2" style="height: 65px; margin-left: 40px;" src="recursos/imgs/SI_19_02.png">
+            <div id="janela_1"
+                style="width: 213px;height: 95px;background-color: #ffd640;margin-left: -111px;margin-top: -17px;border-radius: 10px;flex-wrap: nowrap;">
+                <p style="font-weight: normal;padding-top: 10px;padding-left: 10px;padding-right: 10px;">
+                    Todo cidadão possui direito, em
+                    tempo hábil, ao acesso a bens e
+                    serviços ordenados e organizados
+                    para garantia da promoção,
+                    prevenção, proteção, tratamento
+                    e recuperação da saúde.
+                </p>
+            </div>
+
+            <div id="janela_2"
+                style="width: 200px;height: 95px;background-color: #ffd640;margin-left: 105px;margin-top: -106px;border-radius: 10px;flex-wrap: nowrap;">
+                <p style="font-weight: normal;padding-top: 10px;padding-left: 10px;padding-right: 10px;">
+                    Toda pessoa tem direito ao
+                    atendimento inclusivo,
+                    humanizado e acolhedor,
+                    realizado por profissionais
+                    qualificados, em ambiente
+                    limpo, confortável e acessível.
+                </p>
+            </div>
+
+
+        </div>
     </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
@@ -22,21 +51,15 @@
         src="recursos/imgs/SI_F2.png">
 </footer>
 
-
-
-    <p>Todo cidadão possui direito, em
-    tempo hábil, ao acesso a bens e
-    serviços ordenados e organizados
-    para garantia da promoção,
-    prevenção, proteção, tratamento
-    e recuperação da saúde.</p>
-
-
-
-    <p>Toda pessoa tem direito ao
-    atendimento inclusivo,
-    humanizado e acolhedor,
-    realizado por profissionais
-    qualificados, em ambiente
-    limpo, confortável e acessível.</p>
-
+<script>
+    $(() => {
+        let janela1 = $('#janela_1').hide();
+        let janela2 = $('#janela_2').hide();
+        $('#botao_1').css("cursor", "pointer").click(() => {
+            janela1.fadeIn();
+        })
+        $('#botao_2').css("cursor", "pointer").click(() => {
+            janela2.fadeIn();
+        })
+    })
+</script>
