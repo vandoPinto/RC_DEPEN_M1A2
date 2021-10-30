@@ -13,8 +13,10 @@
         <p>Instituída em 1984, a Lei nº 7.210 prevê o atendimento em saúde para as pessoas reclusas
             em estabelecimentos prisionais. No momento de sua edição, sequer existiam as garantias
             constitucionais de acesso universal, integral e gratuito ao sistema de saúde no país, o que
-            a deixa ser uma legislação considerada de 
-            <strong style="width: 40px; background-color: #FAC900; display: inline;"><a id="hotWord-bt">vanguarda</a></strong>.</p>
+            a deixa ser uma legislação considerada de
+            <strong style="width: 40px; background-color: #FAC900; display: inline;"><a
+                    id="hotWord-bt">vanguarda</a></strong>.
+        </p>
 
 
     </div>
@@ -28,14 +30,15 @@
 </footer>
 
 <div id="conteudo"
-    style="position: absolute; background-color: #fac901; top: 250px; right: 97px; width: 357px; border-radius: 10px;">
-    <p style="text-align: center;">Vanguarda: estar à frente do seu tempo, relativamente a ações, ideias ou experiências.</p>
+    style="position: absolute;background-color: #fac901;top: 233px;right: 128px;width: 289px;border-radius: 10px;">
+    <p style="text-align: center;">Vanguarda: estar à frente do seu tempo, relativamente a ações, ideias ou
+        experiências.</p>
 </div>
 
 <script>
     $(() => {
         let conteudo = $('#conteudo').hide();
-        $('#hotWord-bt').hover(() => {
+        $('#hotWord-bt').css('cursor','pointer').hover(() => {
             conteudo.fadeIn()
         })
         $('#hotWord-bt').mouseout(() => {
