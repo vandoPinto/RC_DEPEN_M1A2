@@ -13,7 +13,7 @@
         var pontuacao = 0;
         var total;
         var arr_escolhas = [];
-        $(document).ready(function () {
+        $(document).ready(function() {
             var elements = parent.document.getElementsByClassName("nav-telas-proxima");
             for (var i = 0, length = elements.length; i < length; i++) {
                 elements[i].style.display = 'none';
@@ -23,28 +23,28 @@
             $(".me_feedback").hide(); //feedbacks nultipla escolha para multiplos feedbacks
             $(".vf_feedback").hide(); //feedbacks in line do VF
             $('input[type="radio"]:checked').prop("checked", false);
-            $("section:not([id='resultados'])").each(function (indexQuestao, questao) {
+            $("section:not([id='resultados'])").each(function(indexQuestao, questao) {
                 $(questao).attr("id", "q" + indexQuestao);
-                $(questao).prepend("<h2>Questão " + (indexQuestao + 1) /*+ " de " + total + "</h2>"*/);
+                $(questao).prepend("<h2>Questão " + (indexQuestao + 1) /*+ " de " + total + "</h2>"*/ );
                 $(questao).find("form input[type='button']").attr("id", "q" + indexQuestao + "verificar");
-                $(questao).find("form input[type='radio']").each(function (indexOpcao, opcao) {
+                $(questao).find("form input[type='radio']").each(function(indexOpcao, opcao) {
                     $(opcao).attr("id", "q" + indexQuestao + "-" + indexOpcao);
                 });
-                $(questao).find("form input[type='checkbox']").each(function (indexOpcao, opcao) {
+                $(questao).find("form input[type='checkbox']").each(function(indexOpcao, opcao) {
                     $(opcao).attr("id", "q" + indexQuestao + "-" + indexOpcao);
                 });
-                $(questao).find("form label").each(function (indexOpcaoTexto, opcaoTexto) {
+                $(questao).find("form label").each(function(indexOpcaoTexto, opcaoTexto) {
                     $(opcaoTexto).attr("for", "q" + indexQuestao + "-" + indexOpcaoTexto);
                 });
-                $(questao).find("form input[type='button']").each(function (indexBotao, botao) {
-                    $(botao).click(function () {
+                $(questao).find("form input[type='button']").each(function(indexBotao, botao) {
+                    $(botao).click(function() {
                         verificarResposta("q" + indexQuestao);
                     });
                 });
                 $(questao).find(".me_feedback").append("<div class='fechar-feedback' title='Fechar'>&times;</div>");
-                $(questao).find(".me_feedback").each(function (indexFeedback, feedbackDiv) {
+                $(questao).find(".me_feedback").each(function(indexFeedback, feedbackDiv) {
                     $(feedbackDiv).attr("id", "fb-q" + indexQuestao + "-" + indexFeedback);
-                    $(feedbackDiv).find(".fechar-feedback").click(function () {
+                    $(feedbackDiv).find(".fechar-feedback").click(function() {
                         $("#fb-q" + indexQuestao + "-" + indexFeedback).slideUp("slow");
                     })
                 })
@@ -52,7 +52,7 @@
             });
             $("#resultados").hide();
             $("#selecione-opcao").hide();
-            $("#refazer-exercicio").click(function () {
+            $("#refazer-exercicio").click(function() {
                 location.reload();
             })
         });
@@ -65,10 +65,10 @@
                 var qtd_opt = 0;
                 var pt = 0;
                 var arr_gabarito = opcaoCorreta.split('-');
-                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']").each(function () {
+                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']").each(function() {
                     arr_escolhas.push($(this).val().toUpperCase());
                 });
-                $("#" + questao + " form input[name='opcao']").each(function () {
+                $("#" + questao + " form input[name='opcao']").each(function() {
                     if (arr_escolhas[qtd_opt] == arr_gabarito[qtd_opt]) { // acertou
                         pt++;
                         $(this).next("label").next("div").addClass("vf_correta").show('slow');
@@ -87,12 +87,12 @@
                 var pt = 0;
                 var arr_gabarito = opcaoCorreta.split(',');
                 //cria um array com as alternativas marcadas
-                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").each(function () {
+                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").each(function() {
                     arr_escolhas.push($(this).val());
                 });
 
                 //para cada alternativa existente, verifica se foi marcada e se é resposta certa
-                var opcoes = $("#" + questao + " form input[name='opcao']").each(function () {
+                var opcoes = $("#" + questao + " form input[name='opcao']").each(function() {
                     qtd_opt++;
                     var valOption = $(this).val();
                     if (arr_escolhas.indexOf(valOption) >= 0) {
@@ -121,11 +121,11 @@
                 var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").val();
                 if (!opcaoSelecionada) { //se não houver opção selecionada, exibir aviso para selecionar uma opção
                     $("#selecione-opcao").slideDown("slow").delay(3000).slideUp("slow");
-                    $("#selecione-opcao").css('top', $("#" + questao + "verificar").position().top -50);
+                    $("#selecione-opcao").css('top', $("#" + questao + "verificar").position().top - 50);
                 } else if (opcaoSelecionada != opcaoCorreta) { //se opção selecionada for incorreta, exibir aviso do erro e mostrar feedback
                     $("#" + questao + " form input[name='opcao']:checked+label").addClass("incorreta");
                     $("#" + questao + " form input[name='opcao']:checked+label+div").addClass("incorreta").show('slow');
-                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top -60);
+                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top - 60);
                     exibirFeedback(questao, opcaoSelecionada);
                 } else if (opcaoSelecionada == opcaoCorreta) {
                     //se opção selecionada for a correta, exibir aviso de acerto e mostrar feedback
@@ -137,7 +137,7 @@
                     } else {
                         $("#fb-" + questao + "-" + opcaoCorreta).addClass("correta");
                     }
-                    $(".me_feedback.correta").css('top', $("#" + questao + "verificar").position().top -50);
+                    $(".me_feedback.correta").css('top', $("#" + questao + "verificar").position().top - 50);
                     pontuacao++;
                     console.log(pontuacao);
                     exibirFeedback(questao, opcaoSelecionada);
@@ -161,12 +161,12 @@
             $("#" + questao + "verificar").hide();
             if (questaoAtual < total - 1) {
                 $("#" + questao).append('<input type="button" value="Próxima questão &#10148;" id="' + questao + 'proxima">');
-                $("#" + questao + "proxima").click(function () {
+                $("#" + questao + "proxima").click(function() {
                     proximaQuestao();
                 });
             } else {
                 $("#" + questao).append('<input type="button" value="Ver pontuação &#10148;" id="finalizar">');
-                $("#finalizar").click(function () {
+                $("#finalizar").click(function() {
                     finalizar();
                 })
             }
@@ -176,12 +176,12 @@
             $("#" + questao + "verificar").hide();
             if (questaoAtual < total - 1) {
                 $("#" + questao).append('<input type="button" value="Próxima questão &#10148;" id="' + questao + 'proxima">');
-                $("#" + questao + "proxima").click(function () {
+                $("#" + questao + "proxima").click(function() {
                     proximaQuestao();
                 });
             } else {
                 $("#" + questao).append('<input type="button" value="Ver pontuação &#10148;" id="finalizar">');
-                $("#finalizar").click(function () {
+                $("#finalizar").click(function() {
                     finalizar();
                 })
             }
@@ -242,7 +242,7 @@
             font-size: 11px;
             overflow: hidden;
         }
-
+        
         h1,
         h2,
         h3,
@@ -252,38 +252,38 @@
             font-family: 'Poppins', sans-serif;
             border: none 0px transparent;
         }
-
+        
         h1 {
             color: #004D73;
             font-size: 18px;
             font-weight: bold;
         }
-
+        
         h2 {
             font-size: 18px;
             color: #004D73;
         }
-
+        
         h3 {
             color: #a80d6d;
             font-size: 24px;
         }
-
+        
         p {
             font-size: 11px;
         }
-
+        
         form {
             counter-reset: opcoes;
         }
-
+        
         input[type="radio"]+label::before,
         input[type="checkbox"]+label::before {
             counter-increment: opcoes;
             content: counter(opcoes, lower-alpha) ") ";
             /* font-weight: bold; */
         }
-
+        
         input[type="button"] {
             margin: 1em auto;
             font-weight: bold;
@@ -298,20 +298,20 @@
             width: 50%;
             cursor: pointer;
         }
-
+        
         input[type="button"]:hover {
             background-color: #FAC900;
         }
-
+        
         input[type="button"]:active {
             background-color: #FAC900;
         }
-
+        
         input[type="radio"],
         input[type="checkbox"] {
             display: none;
         }
-
+        
         input[type="radio"]+label,
         input[type="checkbox"]+label {
             cursor: pointer;
@@ -324,25 +324,25 @@
             list-style: lower-alpha;
             border: .1em solid rgba(34, 34, 34, 0);
         }
-
+        
         input[type="radio"]+label:hover,
         input[type="checkbox"]+label:hover {
             background-color: #FAC900;
             color: red;
         }
-
+        
         input[type="radio"]:disabled+label:hover,
         input[type="checkbox"]:disabled+label:hover {
             background-color: transparent;
             cursor: text;
         }
-
+        
         input[type="radio"]:checked+label,
         input[type="checkbox"]:checked+label {
             background-color: #FAC900;
             color: red;
         }
-
+        
         input[type="radio"]+label.correta,
         input[type="radio"]+label.correta:hover,
         input[type="checkbox"]+label.correta,
@@ -351,13 +351,13 @@
             color: #ffffff;
             border: .1em solid rgba(34, 34, 34, 0);
         }
-
+        
         input[type="radio"]+label.incorreta,
         input[type="checkbox"]+label.incorreta:hover {
             background-color: #FAC900;
             border: .1em solid rgba(34, 34, 34, 0);
         }
-
+        
         .feedback>div,
         .me_feedback,
         #selecione-opcao {
@@ -376,8 +376,7 @@
             width: 90%;
             text-align: justify;
         }
-
-
+        
         .feedback>div::before,
         .me_feedback::before,
         #selecione-opcao::before {
@@ -389,22 +388,22 @@
             font-weight: bold;
             font-size: 11px;
         }
-
+        
         #selecione-opcao p {
             text-align: center;
         }
-
+        
         #selecione-opcao::before {
             content: "Nenhuma alternativa foi selecionada.";
             text-align: center;
             margin: 26px 0 13px 10px;
         }
-
+        
         .feedback>div.correta,
         .me_feedback.correta {
             background-color: #FAC900;
         }
-
+        
         .feedback>div.correta::before,
         .me_feedback.correta::before {
             content: "Resposta correta.";
@@ -412,14 +411,14 @@
             font-size: 14px;
             font-weight: bold;
         }
-
+        
         .img-logo {
             display: flex;
             width: 73px;
             height: 57px;
             margin: -109px 0 52px 0;
         }
-
+        
         .fechar-feedback {
             position: absolute;
             top: 12px;
@@ -429,7 +428,7 @@
             font-weight: bold;
             line-height: 11px;
         }
-
+        
         .botao {
             background-color: #FAC900;
             color: #fff;
@@ -437,36 +436,36 @@
             display: inline-block;
             padding: 0 3px;
         }
-
+        
         .percentRes {
             font-size: 28px;
         }
-
+        
         .bad {
             color: red;
         }
-
+        
         .med {
             color: orange;
         }
-
+        
         .great {
             color: green;
         }
-
+        
         .vf {
             border: none;
             width: 10px;
             margin-left: 5px;
             text-transform: uppercase;
         }
-
+        
         .vf:focus {
             box-shadow: 0 0 0 0;
             border: 0 none;
             outline: 0;
         }
-
+        
         .vf_correta {
             display: inline-block;
             position: relative;
@@ -476,7 +475,7 @@
             background-color: #d4edda;
             border-color: #c3e6cb;
         }
-
+        
         .vf_incorreta {
             display: inline-block;
             position: relative;
@@ -486,13 +485,13 @@
             color: rgb(114, 28, 36);
             background-color: rgb(248, 215, 218);
         }
-
+        
         td {
             padding: 3px;
             border: 0px 1px solid #ddd;
             font-size: 10px;
         }
-
+        
         table {
             border-bottom: 1px solid #ddd;
         }
@@ -512,46 +511,67 @@
         <form>
             <input type="radio" name="opcao" value="0">
             <label>Constituição Federal de 1988.</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png"> Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que,
-            “quando o estabelecimento penal não estiver aparelhado para prover a assistência
-            médica necessária, esta será prestada em outro local, mediante autorização da
-            direção do estabelecimento”.</div>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png"> Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que, “quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária,
+                esta será prestada em outro local, mediante autorização da direção do estabelecimento”.</div>
 
             <input type="radio" name="opcao" value="1">
             <label>Lei de Execução Penal.</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Parabéns! Você acertou! A LEP no § 2º do artigo 14 determina que, “quando o
-            estabelecimento penal não estiver aparelhado para prover a assistência médica
-            necessária, esta será prestada em outro local, mediante autorização da direção
-            do estabelecimento”.</div>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Parabéns! Você acertou! A LEP no § 2º do artigo 14 determina que, “quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária, esta será prestada em
+                outro local, mediante autorização da direção do estabelecimento”.</div>
 
             <input type="radio" name="opcao" value="2">
             <label>Política Nacional de Atenção Integral à Saúde das Pessoas Privadas de Liberdade no
             Sistema Prisional.</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que,
-            “quando o estabelecimento penal não estiver aparelhado para prover a assistência
-            médica necessária, esta será prestada em outro local, mediante autorização da
-            direção do estabelecimento”.</div>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que, “quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária,
+                esta será prestada em outro local, mediante autorização da direção do estabelecimento”.</div>
 
             <input type="radio" name="opcao" value="3">
             <label>Plano Nacional de Saúde no Sistema Penitenciário.</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que,
-            “quando o estabelecimento penal não estiver aparelhado para prover a assistência
-            médica necessária, esta será prestada em outro local, mediante autorização da
-            direção do estabelecimento”.</div>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que, “quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária,
+                esta será prestada em outro local, mediante autorização da direção do estabelecimento”.</div>
 
             <input type="radio" name="opcao" value="4">
             <label>Leis nos 8.080, de 1990, e 8.142, de 1990.</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que,
-            “quando o estabelecimento penal não estiver aparelhado para prover a assistência
-            médica necessária, esta será prestada em outro local, mediante autorização da
-            direção do estabelecimento”.</div>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que, “quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária,
+                esta será prestada em outro local, mediante autorização da direção do estabelecimento”.</div>
             <input type="hidden" name="resposta" value="1">
             <input type="button" value="Submeter">
         </form>
         </div>
     </section>
 
+
     <!-- Questao 2 -->
+    <section>
+        <div class="enunciado">
+            <p>
+                <strong>A população privada de liberdade é incluída no escopo de ações e serviços do Sistema Único de Saúde.</strong>
+            </p>
+            <p>
+        </div>
+        <form>
+            <input type="radio" name="opcao" value="0">
+            <label>Verdadeiro</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Muito bem! São diretrizes da PNAISP: a atenção integral resolutiva, contínua e de qualidade às necessidades de saúde da população privada de liberdade no sistema prisional, com ênfase em
+                atividades preventivas, sem prejuízo dos serviços assistenciais; controle e/ou redução dos agravos mais frequentes que acometem a população privada de liberdade no sistema prisional e intersetorialidade para a gestão integrada e racional
+                e para a garantia do direito à saúde.</div>
+            <input type="radio" name="opcao" value="1">
+            <label>Falso</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">A afirmativa que vimos é verdadeira. São diretrizes da PNAISP: a atenção integral resolutiva, contínua e de qualidade às necessidades de saúde da população privada de liberdade no sistema
+                prisional, com ênfase em atividades preventivas, sem prejuízo dos serviços assistenciais; controle e/ou redução dos agravos mais frequentes que acometem a população privada de liberdade no sistema prisional e intersetorialidade para a
+                gestão integrada e racional e para a garantia do direito à saúde.
+            </div>
+
+            <input type="hidden" name="resposta" value="0">
+            <input type="button" value="Submeter">
+        </form>
+        </div>
+
+    </section>
+
+
+
+    <!-- Questao 3 -->
     <section>
         <div class="enunciado">
             <p><strong>As Leis n<sup>os</sup> 8.080 e 8.142, ambas instituídas em 1990 e denominadas “Leis Orgânicas da
@@ -565,19 +585,15 @@
         <form>
             <input type="radio" name="opcao" value="0">
             <label>Verdadeiro</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Correto! As Leis nos<strong> 8.080,</strong> de 19 de setembro, e <strong>8.142,</strong> de 28 de fevereiro, de fato,
-            dispõem sobre as condições para a promoção, proteção e recuperação da saúde, a
-            organização e o funcionamento dos serviços correspondentes e sobre a participação
-            da comunidade na gestão do SUS e transferências intergovernamentais de recursos
-            financeiros na área da saúde.</div>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">Correto! As Leis nos<strong> 8.080,</strong> de 19 de setembro, e <strong>8.142,</strong> de 28 de fevereiro, de fato, dispõem sobre as condições para a promoção, proteção e recuperação da
+                saúde, a organização e o funcionamento dos serviços correspondentes e sobre a participação da comunidade na gestão do SUS e transferências intergovernamentais de recursos financeiros na área da saúde.</div>
             <input type="radio" name="opcao" value="1">
             <label>Falso</label>
-            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">As Leis nos<strong> 8.080,</strong> de 19 de setembro, e <strong>8.142,</strong> de 28 de fevereiro, de fato, dispõem sobre
-            as condições para a promoção, proteção e recuperação da saúde, a organização e o
-            funcionamento dos serviços correspondentes e sobre a participação da comunidade
-            na gestão do SUS e transferências intergovernamentais de recursos financeiros na
-            área da saúde. Então, a afirmativa que acabamos de ler é verdadeira.</div>
-           
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_CE.png">As Leis nos<strong> 8.080,</strong> de 19 de setembro, e <strong>8.142,</strong> de 28 de fevereiro, de fato, dispõem sobre as condições para a promoção, proteção e recuperação da saúde,
+                a organização e o funcionamento dos serviços correspondentes e sobre a participação da comunidade na gestão do SUS e transferências intergovernamentais de recursos financeiros na área da saúde. Então, a afirmativa que acabamos de ler é
+                verdadeira.
+            </div>
+
             <input type="hidden" name="resposta" value="0">
             <input type="button" value="Submeter">
         </form>
@@ -585,7 +601,7 @@
 
     </section>
 
-    
+
 
 
 
