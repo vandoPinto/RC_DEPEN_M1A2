@@ -4,17 +4,20 @@
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
-<div class="animate__animated animate__pulse saiba-mais-modal" style="margin: 115px auto; width: 409px;">
-    <div>
-        <img class="icone-image" src="recursos/imgs/SI_M_01.png">
-        <h2 style="margin-top: 20px; margin-bottom: 20px;">Saiba mais!</h2>
-        <p>Você conhece a Carta de Direitos e Deveres da Pessoa Usuária da Saúde?
-            Se não, acesse-a na íntegra neste link:</p>
-        <div class="centro"
-            style=" display: flex;justify-content: center;align-items: center;width:380px;height:20px;margin:auto;background-color: #004D73;">
-            <a style="color: white; font-weight: bold; text-decoration: none;" target="_blank"
-                href="http://www.conselho.saude.gov.br/resolucoes/2017/Reso553.pdf">http://www.conselho.saude.gov.br/resolucoes/2017/Reso553.pdf.</a>
-        </div>
+<div class="coluna-esquerda largura-1_3 animate__animated animate__backInLeft">
+    <img style="height: 390px;width: 304px;margin-top: 6px;" src="recursos/imgs/SI_23.png">
+</div>
+<div class="coluna-direita largura-2_1 ">
+    <div style="width: 508px;margin-top: 150px;margin-right: 31px;">
+        <h1>Lei de Execução Penal e sua correlação com a saúde</h1>
+        <p>Instituída em 1984, a Lei nº 7.210 prevê o atendimento em saúde para as pessoas reclusas em estabelecimentos
+            prisionais
+            e é considerada uma legislação de <strong
+                style="width: 40px; background-color: #FAC900; display: inline;"><a
+                    id="hotWord-bt">vanguarda</a></strong>, pois no momento de sua edição, sequer existiam as garantias
+            constitucionais
+            de acesso universal, integral e gratuito ao sistema de saúde no país.
+        </p>
     </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
@@ -22,3 +25,19 @@
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
         src="recursos/imgs/SI_F2.png">
 </footer>
+<div id="conteudo"
+    style="position: absolute;background-color: rgb(250, 201, 1);top: 208px;right: 2px;width: 289px;border-radius: 10px;">
+    <p style="text-align: center;">Estar à frente do seu tempo, relativamente a ações, ideias ou
+        experiências.</p>
+</div>
+<script>
+    $(() => {
+        let conteudo = $('#conteudo').hide();
+        $('#hotWord-bt').css('cursor', 'pointer').hover(() => {
+            conteudo.fadeIn()
+        })
+        $('#hotWord-bt').mouseout(() => {
+            conteudo.fadeOut()
+        })
+    })
+</script>

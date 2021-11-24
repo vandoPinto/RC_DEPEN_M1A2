@@ -1,43 +1,114 @@
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
     <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
-<div class="coluna-esquerda largura-1_1" style="max-width: 888px;">
-    <p style="width: 100%; text-align: center; color: #004D73; font-weight: bold; margin-top: 60px;">
-            Para entender melhor algumas nuances com a promulgação da PNAISP, clique no ícone do vídeo.</p>
-    <div style="text-align: center; margin-top: 40px; cursor: pointer;" class="btn btn animate__animated animate__tada" data-toggle="modal" data-target="#modalCentro">
-        <img src="recursos/imgs/SI_32_2.png" style="width: 233px; height: 180px;">
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="modalCentro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="overflow-y:hidden;">
-    <div class="modal-dialog modal-dialog-centered " role="document">
-        <div class="modal-content" style="position: fixed; top: 72px; left: 0; width: 100%; height: 370px;">
-            <div data-dismiss="modal" class="close" aria-hidden="true" style="margin-left: auto; padding-right: 10px;">&times;</div>
-            <video id="full-video" width="100%" height="345px" controls>
-                <source src="recursos/video/SV_001.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+<div class="coluna-esquerda largura-1_1" style="max-width: 888px; margin: 25px 127px;">
+    <p style="color: #004D73;font-weight: bold;margin-top: 50px;width: 560px;margin-left: 66px;"><strong>Clique em cada
+            uma das abas e saiba como os artigos da Portaria GM/MS nº 2.298, de 9 de setembro de 2021 descrevem os
+            níveis de atendimento em saúde no sistema prisional.</strong></p>
+    <img src="recursos/imgs/SI_34_B01.png" style="margin-top: 13px; width: 633.95px; height: 65px; cursor: pointer;"
+        class="btn btn animate__animated animate__backInLeft" id="botao_1">
+    <img src="recursos/imgs/SI_34_B02.png" style="margin-top: 23px; width: 633.95px; height: 65px; cursor: pointer;"
+        class="btn btn animate__animated animate__backInRight" id="botao_2">
+    <div>
+        <div id="janela_1"
+            style="position: relative;width: 639px;height: 186px;background-color: rgba(255, 214, 64, 0.9);border-radius: 10px;flex-wrap: nowrap;margin-left: 13px;margin-top: -206px;">
+            <p style="font-weight: normal;padding: 10px;">
+                O art. 3º classifica as unidades prisionais para os serviços de saúde de acordo com o número de
+                custodiados:
+            <ul style="margin-left: 10px;">
+                <li>
+                    I - unidades prisionais que contenham até 300 (trezentos) custodiados: serviço de saúde com
+                    funcionamento de 6 (seis)
+                    horas semanais;
+                </li>
+                <li>
+                    II - unidades prisionais que contenham de 101 (cento e um) a 1.700 (mil e setecentos) custodiados:
+                    serviço de saúde com
+                    funcionamento de 20 (vinte) horas semanais; e
+                </li>
+                <li>
+                    III - unidades prisionais que contenham de 1.201 (mil duzentos e um) a 2.700 (dois mil e setecentos)
+                    custodiados:
+                    serviço de saúde com funcionamento de 30 (trinta) horas semanais.
+                </li>
+            </ul>
+            <p style="font-weight: normal;padding: 10px;">Parágrafo único. Os serviços de saúde no sistema prisional
+                observarão as normas sanitárias e de arquitetura penal
+                vigentes.</p>
+            </p>
+        </div>
+        <div id="janela_2"
+            style="position: relative;width: 626px;height: 227px;background-color: rgba(255, 214, 64, 0.9);border-radius: 10px;flex-wrap: nowrap;margin-left: 13px;margin-top: -171px;cursor: pointer;">
+            <p style="font-weight: normal;padding: 10px;">
+                O Art. 4º dispõe sobre o credenciamento das equipes de saúde. A Atenção à Saúde ofertada nas unidades
+                prisionais é
+                prestada por equipes multiprofissionais, denominadas de Equipes de Atenção Primária Prisional (eAPP). O
+                nível de serviço
+                de saúde vai variar conforme a população prisional de cada unidade:
+            <ul style="margin-left: 10px;">
+                <li>
+                    I - Unidades com população prisional de até 300 custodiados - Equipe de Atenção Primária Prisional
+                    (6h semanais) com
+                    carga horária compartilhada com equipe de Saúde da Família (eSF) e equipe de Saúde Bucal (eSB) do
+                    território.
+                </li>
+                <li>
+                    II - Unidades com população prisional entre 101 e 1.700 custodiados - eAPP Essencial ou Ampliada
+                    (20h semanais)
+                    complementação de:
+                    <ul>
+                        <li style="list-style-type: lower-alpha; margin-left: 10px;">
+                            - uma equipe Complementar Psicossocial de Atenção Primária Prisional (20h ou 30h semanais);
+                        </li>
+                        <li style="list-style-type: lower-alpha; margin-left: 10px;">
+                            - um profissional complementar de saúde bucal (20h).
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    III - Unidades com população prisional entre 1.201 e 2.700 custodiados - eAPP Essencial ou Ampliada
+                    (30h semanais) com complementação de:
+                    <ul>
+                        <li style="list-style-type: lower-alpha; margin-left: 10px;">
+                            - uma equipe Complementar Psicossocial de Atenção Primária Prisional (20h ou 30h semanais);
+                        </li>
+                        <li style="list-style-type: lower-alpha; margin-left: 10px;">
+                            - um profissional complementar de saúde bucal (30h semanais).
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
         </div>
     </div>
 </div>
-<!-- Fim modal -->
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
-    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
+    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
+        src="recursos/imgs/SI_F2.png">
 </footer>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.close').click(function(event) {
-            $("#full-video").get(0).pause();
-            $("#full-video").get(0).currentTime = 0;
-            event.preventDefault();
-        });
-        $('.btn').click(function(event) {
-            $("#full-video").get(0).currentTime = 0;
-            $("#full-video").get(0).play();
-        });
-    });
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
 </script>
