@@ -3,41 +3,85 @@
         margin-bottom: 12px;
         margin-left: 18px;
     }
+
+    .questao:hover {
+        background-color: #FAC900;
+        cursor: pointer;
+    }
+
+    .marcado {
+        background-color: #FAC900;
+    }
+
+    .submeter {
+        margin: 1em auto;
+        font-weight: bold;
+        color: #ffffff;
+        border-radius: 3px;
+        background-color: #FAC900;
+        border: solid 0 transparent;
+        outline: none;
+        box-shadow: 0 .1em rgba(0, 0, 0, .5);
+        padding: .5em;
+        display: block;
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .feed {
+        position: relative;
+        width: 270px;
+        height: 125px;
+        background-color: rgba(255, 214, 64, 1);
+        border-radius: 10px;
+        flex-wrap: nowrap;
+        cursor: pointer;
+    }
 </style>
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
-    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
+    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
-<div class="coluna-esquerda largura-1_3 animate__animated animate__flipInX">
-    <img style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;"
-        src="recursos/imgs/SI_46.png">
+<div class="coluna-esquerda largura-1_3">
+    <img class="animate__animated animate__flipInX"
+        style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_28.png">
 </div>
-<div class="coluna-direita largura-2_1 ">
-    <div style="width: 538px;margin-top: 80px;margin-right: 37px;">
-        <h1>Referências Bibliográficas</h1>
-        <ul>
-            <li>BARROS, A. S. <strong>Trajetória de criação da ala especial de medidas de segurança na
-                    Penitenciária III de Franco da Rocha:</strong> o circuito da periculosidade. 2018. 235 f.
-                Dissertação
-                (Mestrado em Psicologia Social) – Pontifícia Universidade Católica de São Paulo, São
-                Paulo, 2018.
-            </li>
-            <li>BRASIL. Presidência da República. Casa Civil. Subchefia para Assuntos Jurídicos. <strong>Lei nº
-                    7.210, de 11 de julho de 1984. Institui a Lei de Execução Penal. Brasília: Presidência da
-                    República, 1984.</strong> Disponível em: <a
-                    href="http://www.planalto.gov.br/ccivil_03/leis/l7210.htm"
-                    target="_blank">http://www.planalto.gov.br/ccivil_03/leis/l7210.htm.</a> Acesso
-                em: 11 ago. 2021.</li>
-            <li>BRASIL. Presidência da República. Casa Civil. Subchefia para Assuntos Jurídicos.
-                <strong>Constituição da República Federativa do Brasil.</strong> Brasília: Presidência da República,
-                1988.
-                Disponível em: <a href="http://www.planalto.gov.br/ccivil_03/leis/l7210.htm"
-                    target="_blank">http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm.</a> Acesso
-                em: 11 ago. 2021.
-            </li>
-        </ul>
+<div class="coluna-direita largura-2_1" style="width: 500px; height: 500px; margin-top: 80px;margin-right: 75px;">
+    <!-- <iframe src="quiz.html"></iframe> -->
+    <h1>Questão 2</h1>
+    <p><strong>As Leis nos 8.080 e 8.142, ambas instituídas em 1990 e denominadas “Leis Orgânicas da
+    Saúde”, dispõem sobre as condições para a promoção, proteção e recuperação da
+    saúde, a organização e o funcionamento dos serviços correspondentes e sobre a
+    participação da comunidade na gestão do SUS e transferências intergovernamentais
+    de recursos financeiros na área da saúde.</strong>
+    </p>
+    <p class="questao" id="opc_c">a) Verdadeiro</p>
+    <p class="questao" id="opc_e">b) Falso</p>
+    <div class="submeter">Submeter</div>
+
+    <div style="margin-top: -130px; width: 500px; height: 170px;" class="feed" id="feedCerto">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta correta</h2>
+        <p style="margin-left: 30px; width: 450px;">Correto! As Leis nos <strong>8.080</strong>, de 19 de setembro, e <strong>8.142</strong>, de 28 de fevereiro, de fato,
+        dispõem sobre as condições para a promoção, proteção e recuperação da saúde, a
+        organização e o funcionamento dos serviços correspondentes e sobre a participação
+        da comunidade na gestão do SUS e transferências intergovernamentais de recursos
+        financeiros na área da saúde.</p>
+    </div>
+
+    <div style="margin-top: -130px; width: 500px; height: 170px;" class="feed" id="feedErrado">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta incorreta</h2>
+        <p style="margin-left: 30px; width: 450px;">As Leis nos <strong>8.080</strong>, de 19 de setembro, e <strong>8.142</strong>, de 28 de fevereiro, de fato, dispõem sobre
+        as condições para a promoção, proteção e recuperação da saúde, a organização e o
+        funcionamento dos serviços correspondentes e sobre a participação da comunidade
+        na gestão do SUS e transferências intergovernamentais de recursos financeiros na
+        área da saúde. Então, a afirmativa que acabamos de ler é verdadeira.</p>
     </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
@@ -45,3 +89,46 @@
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
         src="recursos/imgs/SI_F2.png">
 </footer>
+
+<script>
+    $(() => {
+        let resposta = '';
+        let feedCerto = $(document).find('[id^=feedCerto]').hide();
+        let feedErrado = $(document).find('[id^=feedErrado]').hide();
+        let submeter = $(document).find('[class=submeter]').hide();
+
+        $(feedCerto).on('click', apagarFeeds);
+        $(feedErrado).on('click', apagarFeeds);
+
+        function apagarFeeds() {
+            feedCerto.fadeOut();
+            feedErrado.fadeOut();
+        }
+
+        function desmarcarTudo() {
+            let questao = $(document).find('[id^=opc]').map((index, sel) => {
+                $(sel).removeClass("marcado");
+            })
+        }
+
+        let questao = $(document).find('[id^=opc]').map((index, sel) => {
+            $(sel).click(() => {
+                console.log(sel.id);
+                resposta = sel.id
+                submeter.fadeIn();
+                desmarcarTudo();
+                $(sel).addClass("marcado");
+            })
+        })
+
+        $(submeter).on('click', () => {
+            console.log("clicou " + resposta.split("_")[1]);
+            if (resposta.split("_")[1] == "c") {
+                $(feedCerto).fadeIn();
+                pontos += 1;
+            } else {
+                $(feedErrado).fadeIn();
+            }
+        })
+    })
+</script>
