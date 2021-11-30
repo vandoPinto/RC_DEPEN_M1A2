@@ -53,12 +53,13 @@
     <!-- <iframe src="quiz.html"></iframe> -->
     <h1>Questão 1</h1>
     <p><strong>“Quando o estabelecimento penal não estiver aparelhado para prover a assistência
-    médica necessária, esta será prestada em outro local, mediante autorização da direção
-    do estabelecimento”. Que legislação estipula essa situação?</strong>
+            médica necessária, esta será prestada em outro local, mediante autorização da direção
+            do estabelecimento”. Que legislação estipula essa situação?</strong>
     </p>
     <p class="questao" id="opc_e">a) Constituição Federal de 1988.</p>
     <p class="questao" id="opc_e">b) Lei de Execução Penal.</p>
-    <p class="questao" id="opc_c">c) Política Nacional de Atenção Integral à Saúde das Pessoas Privadas de Liberdade no Sistema Prisional.</p>
+    <p class="questao" id="opc_c">c) Política Nacional de Atenção Integral à Saúde das Pessoas Privadas de Liberdade no
+        Sistema Prisional.</p>
     <p class="questao" id="opc_e">d) Plano Nacional de Saúde no Sistema Penitenciário.</p>
     <p class="questao" id="opc_e">e) Leis nos 8.080, de 1990, e 8.142, de 1990.</p>
     <div class="submeter">Submeter</div>
@@ -67,20 +68,22 @@
         <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
             src="recursos/imgs/SI_CE.png">
         <h2 style="margin-left: 30px;">Resposta correta</h2>
-        <p style="margin-left: 30px; width: 450px;">Parabéns! Você acertou! A LEP no § 2º do artigo 14 determina que, “quando o
-        estabelecimento penal não estiver aparelhado para prover a assistência médica
-        necessária, esta será prestada em outro local, mediante autorização da direção
-        do estabelecimento”.</p>
+        <p style="margin-left: 30px; width: 450px;">Parabéns! Você acertou! A LEP no § 2º do artigo 14 determina que,
+            “quando o
+            estabelecimento penal não estiver aparelhado para prover a assistência médica
+            necessária, esta será prestada em outro local, mediante autorização da direção
+            do estabelecimento”.</p>
     </div>
 
     <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedErrado">
         <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
             src="recursos/imgs/SI_CE.png">
         <h2 style="margin-left: 30px;">Resposta incorreta</h2>
-        <p style="margin-left: 30px; width: 450px;">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do artigo 14 determina que,
-        “quando o estabelecimento penal não estiver aparelhado para prover a assistência
-        médica necessária, esta será prestada em outro local, mediante autorização da
-        direção do estabelecimento”.</p>
+        <p style="margin-left: 30px; width: 450px;">Na verdade, a afirmativa correta é a letra “b”. A LEP no § 2º do
+            artigo 14 determina que,
+            “quando o estabelecimento penal não estiver aparelhado para prover a assistência
+            médica necessária, esta será prestada em outro local, mediante autorização da
+            direção do estabelecimento”.</p>
     </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
@@ -92,6 +95,7 @@
 <script>
     $(() => {
         pontos = 0;
+        let mostrarSub = true;
         let resposta = '';
         let feedCerto = $(document).find('[id^=feedCerto]').hide();
         let feedErrado = $(document).find('[id^=feedErrado]').hide();
@@ -113,8 +117,10 @@
         let questao = $(document).find('[id^=opc]').map((index, sel) => {
             $(sel).click(() => {
                 console.log(sel.id);
-                resposta = sel.id
-                submeter.fadeIn();
+                resposta = sel.id;
+                if (mostrarSub) {
+                    submeter.fadeIn();
+                }
                 desmarcarTudo();
                 $(sel).addClass("marcado");
             })
@@ -123,7 +129,9 @@
         $(submeter).on('click', () => {
             if (resposta.split("_")[1] == "c") {
                 $(feedCerto).fadeIn();
-                pontos+=1;
+                pontos += 1;
+                mostrarSub = false;
+                submeter.hide();
             } else {
                 $(feedErrado).fadeIn();
             }

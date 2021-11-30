@@ -1,18 +1,4 @@
 <style>
-    li {
-        margin-bottom: 12px;
-        margin-left: 18px;
-    }
-
-    .questao:hover {
-        background-color: #FAC900;
-        cursor: pointer;
-    }
-
-    .marcado {
-        background-color: #FAC900;
-    }
-
     .submeter {
         margin: 1em auto;
         font-weight: bold;
@@ -28,16 +14,6 @@
         cursor: pointer;
         text-align: center;
     }
-
-    .feed {
-        position: relative;
-        width: 270px;
-        height: 125px;
-        background-color: rgba(255, 214, 64, 1);
-        border-radius: 10px;
-        flex-wrap: nowrap;
-        cursor: pointer;
-    }
 </style>
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
@@ -50,36 +26,29 @@
         style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_28.png">
 </div>
 <div class="coluna-direita largura-2_1" style="width: 500px; height: 500px; margin-top: 80px;margin-right: 75px;">
-    <!-- <iframe src="quiz.html"></iframe> -->
     <h1>Rendimento</h1>
     <p id="texto"></p>
-    
     <p>Você pode refazer este exercício quantas vezes quiser.</p>
-
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
         src="recursos/imgs/SI_F2.png">
 </footer>
-
 <script>
     $(() => {
-        console.log(pontos);
         let resposta = '';
+        var conteudo = $("#texto").html();
         let submeter = $(document).find('[class=submeter]').on('click', () => {
             console.log('tentando');
             window.location("#tela-45")
         });
-
-        var conteudo = $("#texto").html();
         if (pontos == qtdQuestoes) {
             console.log("certo");
             $("#texto").html("<p>De um total de " + qtdQuestoes + " questões, você acertou " + pontos + ".</p>")
         } else {
             console.log("errado");
             $("#texto").html("<p>De um total de " + qtdQuestoes + " questões, você acertou " + pontos + ".</p><p style='color: red;'>Estude um pouco mais o conteúdo do curso e refaça a avaliação quando se sentir preparado(a).</p>")
-            
         }
     })
 </script>
